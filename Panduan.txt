@@ -1,0 +1,277 @@
+PANDUAN INSTALASI DAN PENGGUNAAN SI-PRAKERIN SMK
+Developer: Ifti Media Computindo
+Tanggal: 05-06-2026 17:06 WIB
+
+============================================================
+1. RINGKASAN
+============================================================
+SI-PRAKERIN SMK adalah aplikasi pengelolaan Prakerin/PKL berbasis Google Apps Script, Google Spreadsheet, dan frontend HTML/XML. Aplikasi mendukung role Super Admin, Admin, Waka Humas, Waka Kurikulum, Kepala Sekolah, Guru/Pembimbing Sekolah, Wali Kelas, Siswa, Pembimbing DU/DI, dan Orang Tua.
+
+Fitur utama:
+1. Login berbasis role.
+2. Dashboard.
+3. Data master siswa, guru, kelas, jurusan, DU/DI, pembimbing DU/DI.
+4. Penempatan siswa.
+5. QR Presensi dan Presensi Manual.
+6. Jurnal harian.
+7. Monitoring.
+8. Penilaian.
+9. Sertifikat.
+10. Laporan/cetak dokumen.
+11. Upload logo, icon, favicon, foto, dan dokumen.
+12. Import data, backup, reset database, hapus multi data.
+13. Auto-sync/realtime ringan.
+
+============================================================
+2. INSTALASI BACKEND APPS SCRIPT
+============================================================
+1. Buka https://script.google.com.
+2. Buat project baru.
+3. Salin kode Code.gs dari paket aplikasi.
+4. Simpan project.
+5. Jalankan fungsi setupDatabase().
+6. Berikan izin akses jika diminta.
+7. Deploy sebagai Web App.
+8. Atur akses sesuai kebutuhan, biasanya Anyone/Anyone with the link.
+9. Salin URL deployment yang berakhiran /exec.
+
+============================================================
+3. INSTALASI FRONTEND
+============================================================
+A. HTML biasa:
+1. Buka index.html.
+2. Pastikan defaultApiUrl berisi URL Apps Script /exec yang benar.
+3. Upload ke hosting atau jalankan sebagai web frontend.
+
+B. Blogger/XML:
+1. Buka Blogger > Tema > Edit HTML.
+2. Backup template lama.
+3. Tempel isi file XML.
+4. Simpan.
+5. Buka aplikasi dan lakukan hard refresh.
+
+============================================================
+4. LOGIN AWAL
+============================================================
+Akun default biasanya:
+Username: superadmin
+Password: admin123
+
+atau:
+Username: admin
+Password: admin123
+
+Jika gagal login:
+1. Pastikan setupDatabase() sudah dijalankan.
+2. Pastikan URL Apps Script benar.
+3. Pastikan Web App sudah deploy versi terbaru.
+4. Pastikan user berstatus active.
+5. Hapus cache browser atau gunakan incognito.
+
+============================================================
+5. URUTAN INPUT DATA AWAL
+============================================================
+1. Pengaturan Sistem.
+2. Jurusan.
+3. Kelas.
+4. Guru.
+5. Siswa.
+6. DU/DI.
+7. Pembimbing DU/DI.
+8. Periode Prakerin.
+9. Penugasan Guru ke DU/DI.
+10. Penempatan Siswa.
+11. QR Presensi/Presensi Manual.
+12. Jurnal.
+13. Monitoring.
+14. Penilaian.
+15. Sertifikat.
+16. Laporan.
+
+============================================================
+6. PENGATURAN SISTEM
+============================================================
+Menu Pengaturan digunakan untuk mengatur identitas sekolah, alamat, kontak, tahun/periode, logo aplikasi, icon/PWA, favicon, folder upload Drive, tema, dan konfigurasi lain.
+
+Langkah simpan logo/icon/favicon:
+1. Login sebagai Super Admin/Admin.
+2. Buka Pengaturan.
+3. Pilih file logo/icon/favicon.
+4. Klik Simpan Pengaturan.
+5. Tunggu sampai muncul notifikasi berhasil.
+6. Jika belum berubah, lakukan hard refresh.
+
+============================================================
+7. DATA MASTER DAN RELASI
+============================================================
+Gunakan dropdown relasi saat mengisi data yang terhubung, misalnya:
+1. Kelas mengambil Jurusan dan Wali Kelas.
+2. Siswa mengambil Kelas dan Jurusan.
+3. Pembimbing DU/DI mengambil DU/DI.
+4. Penugasan mengambil Periode, Guru, dan DU/DI.
+5. Penempatan mengambil Periode, Siswa, Guru, DU/DI, dan Pembimbing DU/DI.
+
+Data tampil dalam tabel dengan pencarian, pagination, refresh, detail, edit, dan hapus/nonaktif sesuai hak akses.
+
+============================================================
+8. QR PRESENSI
+============================================================
+Langkah membuat QR:
+1. Buka Sesi QR.
+2. Pilih Periode melalui dropdown.
+3. Pilih DU/DI melalui dropdown.
+4. Pilih Guru Pembimbing melalui dropdown.
+5. Isi tanggal dan waktu.
+6. Klik Buat QR.
+
+Langkah siswa:
+1. Login sebagai siswa.
+2. Buka Scan QR.
+3. Scan QR yang ditampilkan.
+4. Sistem mencatat presensi.
+
+============================================================
+9. ABSEN MANUAL
+============================================================
+Digunakan jika QR gagal atau kondisi khusus.
+Langkah:
+1. Buka Presensi > Absen Manual.
+2. Pilih siswa.
+3. Pilih tanggal.
+4. Pilih status Hadir/Izin/Sakit/Alfa.
+5. Isi jam/catatan jika perlu.
+6. Klik Simpan.
+
+============================================================
+10. JURNAL HARIAN
+============================================================
+Siswa mengisi jurnal harian dengan tanggal, waktu, aktivitas, hasil, kendala, solusi, dan foto bukti jika diperlukan. Guru atau Pembimbing DU/DI dapat memvalidasi jurnal sesuai hak akses.
+
+============================================================
+11. MONITORING
+============================================================
+Langkah:
+1. Buka Monitoring.
+2. Klik tambah/edit.
+3. Pilih Penempatan melalui dropdown.
+4. Isi tanggal, jenis monitoring, temuan, masalah, tindak lanjut, dan catatan.
+5. Upload foto jika diperlukan.
+6. Klik Simpan.
+
+============================================================
+12. PENILAIAN
+============================================================
+Langkah:
+1. Buka Penilaian.
+2. Pilih Penempatan melalui dropdown.
+3. Isi komponen nilai.
+4. Klik Simpan/Hitung.
+5. Sistem menyimpan nilai akhir dan predikat jika tersedia.
+
+============================================================
+13. SERTIFIKAT
+============================================================
+Langkah generate:
+1. Buka Sertifikat.
+2. Pilih Penempatan melalui dropdown.
+3. Klik Generate Sertifikat.
+
+Langkah cetak:
+1. Pilih data sertifikat/penempatan.
+2. Klik Cetak Sertifikat.
+3. Preview terbuka.
+4. Cetak dari browser.
+
+============================================================
+14. LAPORAN DAN CETAK
+============================================================
+Laporan tidak perlu input ID manual. Gunakan dropdown/filter:
+1. Periode.
+2. Siswa.
+3. Guru.
+4. DU/DI.
+5. Tanggal mulai.
+6. Tanggal selesai.
+
+Jika filter dikosongkan, sistem mengambil data sesuai hak akses.
+Jenis laporan: Surat Pengantar, Surat Tugas Guru, Rekap Penempatan, Rekap Presensi, Rekap Jurnal, Rekap Monitoring, Rekap Nilai, Sertifikat Formal.
+
+============================================================
+15. IMPORT DATA
+============================================================
+1. Download template import.
+2. Isi data sesuai header.
+3. Jangan mengubah nama kolom.
+4. Upload file.
+5. Klik Import.
+6. Cek hasil di menu terkait.
+
+Urutan import disarankan: Jurusan, Kelas, Guru, Siswa, DU/DI, Pembimbing DU/DI, Periode, Penugasan, Penempatan.
+
+============================================================
+16. BACKUP DAN RESET DATABASE
+============================================================
+Backup dilakukan sebelum update atau reset. Reset Database hanya digunakan jika ingin menghapus/mengosongkan data. Jangan menjalankan Reset Database jika data masih dipakai.
+
+============================================================
+17. AUTO-SYNC DAN LOADING CEPAT
+============================================================
+Aplikasi memakai auto-sync/realtime ringan. Sistem mengecek perubahan data berkala dan hanya memuat ulang bagian aktif. Untuk performa lebih baik, gunakan pagination, filter pencarian, dan hindari menyimpan gambar mentah/base64 di Spreadsheet.
+
+============================================================
+18. TROUBLESHOOTING CEPAT
+============================================================
+Tombol login tidak bisa diklik:
+1. Pakai file index/XML terbaru.
+2. Hard refresh.
+3. Coba incognito.
+
+Sesi login tidak ditemukan:
+1. Login ulang.
+2. Pastikan localStorage browser aktif.
+3. Hapus cache.
+
+Tombol Simpan tidak berfungsi:
+1. Pastikan frontend terbaru.
+2. Pastikan token login aktif.
+3. Deploy ulang backend jika fungsi belum ada.
+
+Upload logo/icon/favicon gagal:
+1. Pastikan login aktif.
+2. Gunakan file JPG/PNG terlebih dahulu.
+3. Pastikan izin Drive tersedia.
+4. Coba deploy ulang Code.gs.
+
+Maximum call stack size exceeded:
+1. Jangan campur beberapa patch frontend.
+2. Gunakan versi no-recursion/final terbaru.
+3. Hapus cache browser.
+
+setSelectValue is not defined:
+1. Gunakan frontend terbaru.
+2. Hard refresh browser.
+
+Data tidak muncul:
+1. Klik Muat Ulang/Sinkronkan.
+2. Periksa data di Spreadsheet.
+3. Pastikan role memiliki hak akses.
+4. Cek filter pencarian/tanggal.
+
+============================================================
+19. CATATAN VERSI TRIAL
+============================================================
+Versi Trial:
+1. Nama sekolah default: SMK Iftitah.
+2. Siswa maksimal 5 data aktif.
+3. Guru maksimal 5 data aktif.
+4. DU/DI maksimal 5 data aktif.
+5. Pembimbing DU/DI maksimal 5 data aktif.
+6. Beberapa pengaturan dapat dikunci.
+
+============================================================
+20. PENUTUP
+============================================================
+Panduan ini digunakan untuk instalasi, penggunaan, pemeliharaan, dan troubleshooting SI-PRAKERIN SMK.
+
+Ifti Media Computindo
+Karangmoncol - Randudongkal

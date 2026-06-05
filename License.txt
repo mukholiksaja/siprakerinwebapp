@@ -1,0 +1,76 @@
+LISENSI PENGGUNAAN APLIKASI SI-PRAKERIN SMK
+Developer: Ifti Media Computindo
+Tanggal: 05-06-2026 17:06 WIB
+
+============================================================
+1. IDENTITAS PRODUK
+============================================================
+Nama Produk      : SI-PRAKERIN SMK
+Jenis Aplikasi   : Sistem Informasi Prakerin/PKL SMK
+Platform         : Google Apps Script Web App, Google Spreadsheet, HTML/XML Frontend, PWA/WebView Ready
+Developer        : Ifti Media Computindo
+
+Aplikasi ini digunakan untuk mengelola kegiatan Prakerin/PKL SMK, meliputi data master, penempatan, presensi QR/manual, jurnal, monitoring, penilaian, sertifikat, laporan, upload dokumen, dan manajemen pengguna berbasis role.
+
+============================================================
+2. JENIS LISENSI
+============================================================
+A. LISENSI FULL SERVICE
+Lisensi Full Service diberikan untuk penggunaan penuh oleh sekolah/instansi.
+Hak penggunaan:
+1. Menggunakan seluruh fitur aplikasi untuk kebutuhan internal sekolah.
+2. Mengelola data tanpa batasan versi trial.
+3. Menggunakan fitur pengaturan, logo, favicon, upload, presensi, jurnal, monitoring, penilaian, laporan, dan sertifikat.
+4. Melakukan deployment di Google Apps Script dan menggunakan frontend HTML/XML sesuai kebutuhan.
+
+Batasan:
+1. Tidak boleh menjual ulang source code sebagai produk baru tanpa izin tertulis developer.
+2. Tidak boleh membagikan source code secara publik tanpa izin.
+3. Tidak boleh menghapus identitas developer apabila masih bagian dari paket implementasi resmi.
+4. Tidak boleh menggunakan aplikasi untuk manipulasi data, penyalahgunaan dokumen, atau tindakan melanggar hukum.
+
+B. LISENSI TRIAL
+Lisensi Trial digunakan untuk demo, uji coba, promosi, atau evaluasi.
+Ketentuan Trial:
+1. Nama sekolah default: SMK Iftitah.
+2. Siswa maksimal 5 data aktif.
+3. Guru/Pembimbing Sekolah maksimal 5 data aktif.
+4. DU/DI maksimal 5 data aktif.
+5. Pembimbing DU/DI maksimal 5 data aktif.
+6. Beberapa pengaturan dapat dikunci/default.
+7. Trial tidak ditujukan untuk operasional produksi penuh.
+
+============================================================
+3. HAK CIPTA DAN KEPEMILIKAN
+============================================================
+1. Hak cipta struktur aplikasi, desain, alur kerja, kode, dan paket aplikasi berada pada developer, kecuali library pihak ketiga.
+2. Data operasional sekolah yang dimasukkan ke aplikasi tetap menjadi milik sekolah/pengguna.
+3. Pengguna bertanggung jawab menjaga keamanan akun, Spreadsheet, Apps Script, Google Drive, dan URL deployment.
+4. Developer tidak bertanggung jawab atas kehilangan data akibat kelalaian pengguna, penghapusan manual, kesalahan konfigurasi, atau penyalahgunaan akses.
+
+============================================================
+4. LAYANAN PIHAK KETIGA
+============================================================
+Aplikasi dapat menggunakan Google Apps Script, Google Spreadsheet, Google Drive, Browser/PWA/WebView, dan library JavaScript pendukung. Performa, kuota, dan kebijakan layanan pihak ketiga mengikuti ketentuan penyedia layanan tersebut.
+
+============================================================
+5. PEMELIHARAAN DAN UPDATE
+============================================================
+1. Backup Spreadsheet sebelum update besar.
+2. Deploy ulang Web App setelah mengganti Code.gs.
+3. Jalankan setupDatabase() jika update menambah sheet, kolom, atau setting baru.
+4. Jika hanya mengganti frontend HTML/XML, biasanya setupDatabase() tidak perlu dijalankan.
+5. Setelah update frontend, lakukan hard refresh atau hapus cache browser.
+
+============================================================
+6. BATASAN JAMINAN
+============================================================
+Aplikasi dirancang agar stabil, tetapi performa dapat dipengaruhi koneksi internet, ukuran data Spreadsheet, kuota Apps Script, cache browser, perangkat pengguna, dan perubahan kebijakan layanan Google. Pengguna wajib melakukan backup dan pengujian sebelum penggunaan resmi.
+
+============================================================
+7. PENUTUP
+============================================================
+Dengan menggunakan SI-PRAKERIN SMK, pengguna dianggap memahami dan menyetujui ketentuan lisensi ini.
+
+Ifti Media Computindo
+Karangmoncol - Randudongkal
